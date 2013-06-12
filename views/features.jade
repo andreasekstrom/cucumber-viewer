@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  #wrapper
+    #display
+      -for (var id in features)
+        - var item = features[id]
+        div
+          a(href='/feature/#{item}') #{item}
+
+

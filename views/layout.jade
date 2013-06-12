@@ -1,0 +1,13 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/javascripts/highlight/src/styles/idea.css')
+    script(src='/javascripts/highlight/src/highlight.js')
+    script(src='/javascripts/gherkin_en.js')
+    script(type='text/javascript')
+      hljs.initHighlightingOnLoad()
+
+  body
+    block content
