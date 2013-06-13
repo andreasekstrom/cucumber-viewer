@@ -7,7 +7,7 @@ block content
       -for (var id in features)
         - var item = features[id]
           div
-            a(href='/feature/#{item}') #{item}
+            a(href='/feature/#{item}') #{sanitize_feature_name(item)}
     #wrapper
       #display
         pre
