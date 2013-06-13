@@ -19,11 +19,9 @@ function list_features(callback) {
 }
 
 function read_file(path) {
-  console.log("In function: " + path);
   var fs = require('fs');
   return fs.readFileSync(path, 'utf8');
 }
-
 
 exports.home = function(req, res){
   res.render('home', { title: 'Cucumber viewer' })
@@ -40,12 +38,17 @@ exports.features = function(req, res) {
 
 // handler for displaying individual features
 exports.feature = function(req, res) {
-  var name = req.params.id;
-  //feature = "Feature: Passive users\n Scenario: Creating a new passive user"
-  var filename = process.env.FEATURES_HOME + "/" + name + ".feature";
-  var feature = read_file(filename);
-  feature = feature.replace("'","´");
 
-  res.render('feature', { title: 'Feature - ' + name, feature: feature });
+  callback = function(files, feature) {
+    var name = req.params.id;
+
+    var filename = process.env.FEATURES_HOME + "/" + name + ".feature";
+    var feature = read_file(filename);
+    feature = feature.replace("'","´");
+
+    res.render('feature', { title: 'Feature - ' + name, feature:feature, features:files});
+  }
+
+  list_features(callback);
 };
 
