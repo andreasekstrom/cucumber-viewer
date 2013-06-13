@@ -5,3 +5,16 @@ body {
 a {
   color: #00b7ff;
 }
+#sidebar {
+  width: 300px;
+  float: left;
+  padding-bottom: 2000px;
+}
+.feature {
+  font-size: 20px;
+  font-weight: bold;
+}
+.wip {
+  font-size: 8px;
+  color: #f00;
+}
