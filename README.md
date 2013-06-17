@@ -29,7 +29,7 @@ Built on other's great work
 ---------------------------
 
 * [Syntax highlighters for Gherkin source](http://cukes.info/gherkin-syntax-highlighters)
-* [higligtht.js](http://softwaremaniacs.org/soft/highlight/en/ - Syntax highlighting "on the fly" using javascript in the browser (However I could not make it work with either their prebuilt version or their github-master repo so I used: http://cukes.info/gherkin-syntax-highlighters/highlight.js/highlight/src/highlight.js)
+* [highligtht.js](http://softwaremaniacs.org/soft/highlight/en/ - Syntax highlighting "on the fly" using javascript in the browser (However I could not make it work with either their prebuilt version or their github-master repo so I used: http://cukes.info/gherkin-syntax-highlighters/highlight.js/highlight/src/highlight.js)
 * [Node](http://nodejs.org/) and [Express.js](http://expressjs.com/) seemed like the easiest way to get a webserver up quick
 
 How to use
