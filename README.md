@@ -51,7 +51,7 @@ TODOs
 
 Because I have only put a few hours so far, there is of course much left to be done...
 
-* Hacky code, no tests (Yuack!)
+* Hacky code, probably not best uses of node.js/express. No tests (Yuack!)  (To be improved if I decide to continue on this...)
 * Search is next thing to implement (assumption is that some node-package or Unix-grep will do...)
 * Some characters in feature files makes syntax highlighting fail
 
