@@ -20,6 +20,8 @@ function list_features(callback) {
 
 function read_file(path) {
   var fs = require('fs');
+  if (!fs.existsSync(path))
+    return null;
   return fs.readFileSync(path, 'utf8');
 }
 
@@ -44,9 +46,12 @@ exports.feature = function(req, res) {
 
     var filename = process.env.FEATURES_HOME + "/" + name + ".feature";
     var feature = read_file(filename);
-    feature = feature.replace("'","´");
-
-    res.render('feature', { title: 'Feature - ' + name, feature:feature, features:files});
+    if (feature != null) {
+      feature = feature.replace("'","´");
+      res.render('feature', { title: 'Feature - ' + name, feature:feature, features:files});
+    } else {
+      res.render('404', { url: filename });
+    }
   }
 
   list_features(callback);
