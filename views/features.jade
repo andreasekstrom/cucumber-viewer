@@ -1,13 +1,10 @@
 extends layout
 
 block content
-  #wrapper
-    #display
-      p Features
+  #container
+    include _sidebar
+    #wrapper
+      #display
 
-      -for (var id in features)
-        - var item = features[id]
-        div
-          a(href='/feature/#{item}') #{sanitize_feature_name(item)}
 
 

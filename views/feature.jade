@@ -2,12 +2,7 @@ extends layout
 
 block content
   #container
-    #sidebar
-      p Features
-      -for (var id in features)
-        - var item = features[id]
-          div
-            a(href='/feature/#{item}') #{sanitize_feature_name(item)}
+    include _sidebar
     #wrapper
       #display
         pre
