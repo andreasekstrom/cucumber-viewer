@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+        "name": "Product one",
+        "id": "product_1",
+        "path": "/path/to/product/feature/directory",
+        "description": "Bla bla bla..."
+    },
+    {
+        "name": "My other excellent product",
+        "id": "other",
+        "path": "/path/to/other/product/feature/directory",
+        "description": "This is an awesome product that bla bla..."
+    }
+  ]
+}

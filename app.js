@@ -17,6 +17,10 @@ var express = require('express')
   , path = require('path');
 
 product_config = JSON.parse(read_file("./products.json"));
+if (product_config == null) {
+  console.log("You need to add a 'products.json' file. Please copy 'products.json.example' and change for your needs.");
+  process.exit(1);
+}
 
 var app = express();
 app.get('/', viewer.home);
