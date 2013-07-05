@@ -3,18 +3,29 @@
  * Module dependencies.
  */
 
+function read_file(path) {
+  var fs = require('fs');
+  if (!fs.existsSync(path))
+    return null;
+  return fs.readFileSync(path, 'utf8');
+}
+
 var viewer = require('./routes/viewer');
 
 var express = require('express')
   , http = require('http')
   , path = require('path');
 
+product_config = JSON.parse(read_file("./products.json"));
+
 var app = express();
 app.get('/', viewer.home);
-// display the list of item
-app.get('/features', viewer.features);
+
+// display the list of features
+app.get('/:product/features', viewer.features);
+
 // show individual feature
-app.get('/feature/:id', viewer.feature);
+app.get('/:product/feature/:id', viewer.feature);
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -26,9 +37,11 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.cookieParser('your secret here'));
 app.use(express.session());
-app.use(app.router);
+
 app.use(require('stylus').middleware(__dirname + '/public'));
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(app.router);
 
 app.locals.sanitize_feature_name = function(string){
   string = string.charAt(0).toUpperCase() + string.slice(1);

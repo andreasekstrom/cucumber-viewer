@@ -1,6 +1,6 @@
 #sidebar
-  p Features
+  p Features - #{product.name}
   -for (var id in features)
     - var item = features[id]
       div
-        a(href='/feature/#{item}') #{sanitize_feature_name(item)}
+        a(href='/#{product.id}/feature/#{item}') #{sanitize_feature_name(item)}
