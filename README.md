@@ -37,9 +37,22 @@ How to use
 
 * [Install node](http://nodejs.org/)
 * clone this repo
+* Add a config file 'products.json' (a 'product.json.example' is provided)
+
+        {
+          "products": [
+            {
+                "name": "Product one",
+                "id": "product_1",
+                "path": "/path/to/product/feature/directory",
+                "description": "Bla bla bla..."
+            }
+          ]
+        }
+
+* Install and run
 
         npm install
-        export FEATURES_HOME=/path/to/the/cucumber/features/folder/you/want/to/expose
         node app
 
 Done. Now serving on port 3000
