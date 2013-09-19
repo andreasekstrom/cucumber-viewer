@@ -2,10 +2,10 @@ doctype 5
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='/stylesheets/idea.css')
-    script(src='/javascripts/highlight.js')
-    script(src='/javascripts/gherkin_en.js')
+    link(rel='stylesheet', href='#{basePath}/stylesheets/style.css')
+    link(rel='stylesheet', href='#{basePath}/stylesheets/idea.css')
+    script(src='#{basePath}/javascripts/highlight.js')
+    script(src='#{basePath}/javascripts/gherkin_en.js')
     script.
       hljs.initHighlightingOnLoad()
 
@@ -16,5 +16,5 @@ html
     ul
       - each p in all
         li
-          a(href='/#{p.id}/features') #{p.name}
+          a(href='#{basePath}/#{p.id}/features') #{p.name}
     block content

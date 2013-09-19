@@ -22,6 +22,8 @@ if (product_config == null) {
   process.exit(1);
 }
 
+basePath = process.env.BASE_PATH || '';
+
 var app = express();
 app.get('/', viewer.home);
 
