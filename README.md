@@ -29,7 +29,7 @@ Built on other's great work
 ---------------------------
 
 * [Syntax highlighters for Gherkin source](http://cukes.info/gherkin-syntax-highlighters)
-* [highligtht.js](http://softwaremaniacs.org/soft/highlight/en/ - Syntax highlighting "on the fly" using javascript in the browser (However I could not make it work with either their prebuilt version or their github-master repo so I used: http://cukes.info/gherkin-syntax-highlighters/highlight.js/highlight/src/highlight.js)
+* [highligtht.js](http://softwaremaniacs.org/soft/highlight/en/) - Syntax highlighting "on the fly" using javascript in the browser (However I could not make it work with either their prebuilt version or their github-master repo so I used: http://cukes.info/gherkin-syntax-highlighters/highlight.js/highlight/src/highlight.js)
 * [Node](http://nodejs.org/) and [Express.js](http://expressjs.com/) seemed like the easiest way to get a webserver up quick
 
 How to use
@@ -52,12 +52,20 @@ How to use
 
 * Install and run
 
-        npm install
-        node app
+        $ npm install
+        $ node app
 
 Done. Now serving on port 3000
 
-When feature files are changed on disk, the syntaxhighlighted webpages will too...no configuration...
+Alternative environment config:
+
+* PORT
+* BASE_PATH (to be able to serve the app behind a reverse proxy and get correct urls to assets)
+
+        $ PORT=7777 BASE_PATH='/cucumber' node app
+        => Will be serving app on http://HOST:PORT/cucumber
+
+When feature files are changed on disk, the syntaxhighlighted webpages will too...no configuration/build step...just refresh the browser.
 
 TODOs
 -----
