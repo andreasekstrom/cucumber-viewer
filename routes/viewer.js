@@ -62,7 +62,7 @@ exports.feature = function(req, res) {
     var filename = info.path + "/" + name + ".feature";
     var feature = read_file(filename);
     if (feature != null) {
-      feature = feature.replace("'","´");  // Fix for syntax highlight to work
+      feature = feature.replace(/'/g,"´");  // Fix for syntax highlight to work
       res.render('feature', { title: 'Feature - ' + name, product: info, feature:feature, features:files, all:products});
     } else {
       res.render('404', { url: filename });
