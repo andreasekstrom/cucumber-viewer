@@ -1,3 +1,4 @@
 # Mac OS X junk
 .DS_Store
 node_modules
+products.json
