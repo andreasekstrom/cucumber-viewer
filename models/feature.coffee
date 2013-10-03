@@ -1,10 +1,6 @@
 fs = require('fs')
 path = require('path')
 
-readFileSync = (path) ->
-  if (fs.existsSync(path))
-    fs.readFileSync(path, 'utf8')
-
 readFile = (path, callback) ->
   fs.exists path, (exists) ->
     if exists
@@ -16,10 +12,6 @@ class Feature
   constructor: (@path) ->
     @id = resolveId @path
     @name = humanize @id
-
-  readContentsSync: ->
-    contents = readFileSync @filename
-    fixSyntaxHighlighting contents
 
   readContents: (callback) ->
     readFile @path, (contents) ->
