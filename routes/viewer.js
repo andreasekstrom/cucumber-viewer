@@ -25,9 +25,9 @@ function read_file(path) {
   return fs.readFileSync(path, 'utf8');
 }
 
-function product_info(product_id, product_config) {
+function product_info(product_id, products) {
   var product = null;
-  product_config.products.forEach(function(object) {
+  products.forEach(function(object) {
     if (object.id == product_id) {
       product = object;
     }
@@ -36,13 +36,13 @@ function product_info(product_id, product_config) {
 }
 
 exports.home = function(req, res){
-  res.render('home', { title: 'Cucumber viewer', all: global.product_config.products })
+  res.render('home', { title: 'Cucumber viewer', all: global.productConfig.products })
 };
 
 exports.features = function(req, res) {
   var product_id = req.params.product;
-  var info = product_info(product_id, global.product_config);
-  var products = global.product_config.products;
+  var info = product_info(product_id, global.productConfig.products);
+  var products = global.productConfig.products;
 
   callback = function(files) {
     res.render('features', { title: 'Documentation - features', product: info, features:files , all: products });
@@ -55,8 +55,8 @@ exports.features = function(req, res) {
 exports.feature = function(req, res) {
   var product = req.params.product;
   var name = req.params.id;
-  var products = global.product_config.products;
-  var info = product_info(product, global.product_config);
+  var products = global.productConfig.products;
+  var info = product_info(product, global.productConfig.products);
 
   callback = function(files, feature) {
     var filename = info.path + "/" + name + ".feature";

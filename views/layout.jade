@@ -14,7 +14,7 @@ html
       img(class="github-ribbon", src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png", alt="Fork me on GitHub")
     p Products
     ul
-      - each p in all
+      - each product in all
         li
-          a(href='#{basePath}/#{p.id}/features') #{p.name}
+          a(href='#{basePath}/#{product.id}/features') #{product.name}
     block content
