@@ -8,10 +8,8 @@ path    = require('path')
 
 router = require('./routes/router')
 
-port = process.env.PORT || 3000
-
-global.productConfig = require('./lib/product_config').load()
 global.basePath = process.env.BASE_PATH || ''
+port = process.env.PORT || 3000
 
 app = express()
 

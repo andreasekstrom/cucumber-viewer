@@ -1,3 +1,5 @@
+Product = require '../models/product'
+
 listFeatures = (path, callback) ->
   execFile = require('child_process').execFile
   walk = require('walk')
@@ -28,12 +30,12 @@ productInfo = (productId, products) ->
   product
 
 exports.home = (req, res) ->
-  res.render 'home', title: 'Cucumber viewer', all: global.productConfig.products
+  res.render 'home', title: 'Cucumber viewer', all: Product.all()
 
 exports.features = (req, res) ->
   productId = req.params.product
-  info = productInfo productId, global.productConfig.products
-  products = global.productConfig.products
+  products = Product.all()
+  info = productInfo productId, products
 
   listFeatures info.path, (files) ->
     res.render 'features', title: 'Documentation - features', product: info, features: files, all: products
@@ -42,8 +44,8 @@ exports.features = (req, res) ->
 exports.feature = (req, res) ->
   product = req.params.product
   name = req.params.id
-  products = global.productConfig.products
-  info = productInfo product, global.productConfig.products
+  products = Product.all()
+  info = productInfo product, products
 
   listFeatures info.path, (files, feature) ->
     filename = info.path + "/" + name + ".feature"
