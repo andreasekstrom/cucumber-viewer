@@ -36,13 +36,6 @@ app.use app.router
 if app.get('env') is 'development'
   app.use(express.errorHandler())
 
-# TODO: Move this away to helpers
-app.locals.sanitizeFeatureName = (string) ->
-  string = string.charAt(0).toUpperCase() + string.slice(1)
-  string = string.replace(/_/g," ")
-  string
-
-
 # Start server
 http.createServer(app).listen port, ->
   console.log 'Express server listening on port ' + port
