@@ -1,10 +1,11 @@
 extends layout
 
 block content
-  #container
-    include _sidebar
-    #wrapper
-      #display
-        pre
-          code.gherkin_en #{feature}
+  include _sidebar
+
+  article
+    h1= feature.name
+
+    pre
+      code.gherkin_en= contents
 

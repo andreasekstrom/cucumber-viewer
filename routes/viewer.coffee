@@ -34,7 +34,8 @@ exports.feature = (req, res) ->
         res.render 'feature'
           title: 'Feature - ' + feature.name
           product: product
-          feature: contents || ""
+          feature: feature
+          contents: contents
           features: features
           products: Product.all()
     else

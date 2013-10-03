@@ -1,5 +1,7 @@
-#sidebar
-  p Features - #{product.name}
-  each feature, i in features
-    div
-      a(href='#{basePath}/#{product.id}/feature/#{feature.id}') #{feature.name}
+aside#feature-list
+  strong Features - #{product.name}
+  nav
+    ol
+      each feature, i in features
+        li
+          a(href='#{basePath}/#{product.id}/feature/#{feature.id}') #{feature.name}
