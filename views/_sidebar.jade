@@ -1,6 +1,7 @@
-#sidebar
-  p Features - #{product.name}
-  -for (var id in features)
-    - var item = features[id]
-      div
-        a(href='#{basePath}/#{product.id}/feature/#{item}') #{sanitize_feature_name(item)}
+aside#feature-list
+  strong Features - #{product.name}
+  nav
+    ol
+      each feature, i in features
+        li
+          a(href='#{basePath}/#{product.id}/feature/#{feature.id}') #{feature.name}

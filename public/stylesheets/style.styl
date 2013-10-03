@@ -1,23 +1,51 @@
+sidebar_width = 300px
+
 body
-  padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+  font: 14px "Lucida Grande", "Helvetica", "Arial", sans-serif
+  padding: 0
+  margin: 0
+
 a
   color: #00B7FF
   text-decoration: none;
 
-#sidebar
-  width: 300px
+a:hover
+  text-decoration underline
+
+#main
+  padding: 50px
+
+// Clearfix
+#main:after
+  clear both
+  display table
+  content ""
+
+#feature-list
+  width: sidebar_width
   float: left
-  padding-bottom: 2000px
   padding-top: 10px
 
-.feature
-  font-size: 20px
-  font-weight: bold
+#feature-list ol
+  list-style none
+  padding 0
+  margin 0
+
+#feature-list strong
+  line-height 2
+
+#feature-list li
+  line-height 1.5
 
 .wip
-  font-size: 8px
-  color: red
+  font-size large
+  color orange
 
 .github-ribbon
-  float:right
+  float: right
+
+article
+  padding-left: sidebar_width
+
+article h1
+  font-size: 2em

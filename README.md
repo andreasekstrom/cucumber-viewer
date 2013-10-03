@@ -53,7 +53,7 @@ How to use
 * Install and run
 
         $ npm install
-        $ node app
+        $ npm start
 
 Done. Now serving on port 3000
 

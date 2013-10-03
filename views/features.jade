@@ -1,11 +1,9 @@
 extends layout
 
 block content
-  #container
-    include _sidebar
-    #wrapper
-      #display
-        h1 #{product.name}
-        p #{product.description}
+  include _sidebar
 
+  article
+    h1= product.name
+    p= product.description
 
