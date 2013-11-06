@@ -1,15 +1,16 @@
 {
   "name": "cucumber-viewer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "coffee app.coffee"
   },
   "dependencies": {
     "express": "3.2.5",
-    "coffee-script": "*",
+    "coffee-script": "1.6.x",
     "jade": "*",
     "stylus": "*",
     "walk": "*"
-  }
+  },
+  "license": "MIT"
 }
