@@ -2,7 +2,7 @@ Product = require '../models/product'
 Feature = require '../models/feature'
 
 exports.home = (req, res) ->
-  res.render 'home'
+  res.render 'home',
     title: 'Cucumber viewer'
     products: Product.all()
 
@@ -11,7 +11,7 @@ exports.features = (req, res) ->
   product = Product.find productId
 
   product.findFeatures (features) ->
-    res.render 'features'
+    res.render 'features',
       title: 'Documentation - features'
       product: product
       features: features
@@ -31,7 +31,7 @@ exports.feature = (req, res) ->
 
     if feature?
       feature.readContents (contents) ->
-        res.render 'feature'
+        res.render 'feature',
           title: 'Feature - ' + feature.name
           product: product
           feature: feature
