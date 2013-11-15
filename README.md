@@ -14,7 +14,7 @@ _"The simplest Cucumber feature viewer that could possibly work"_
 
 By _simplest_ I mean...
 
-* Get something running in notime: Timebox so far: two 40-minute train-rides...
+* Get something running in notime: Initial timebox: two 40-minute train-rides...
 * Easy install
 * No or little maintenance - Should not require a database or index server and such...
 
@@ -35,7 +35,7 @@ Built on other's great work
 How to use
 ----------
 
-* [Install node](http://nodejs.org/)
+* [Install Node.js](http://nodejs.org/)
 * clone this repo
 * Add a config file 'products.json' (a 'product.json.example' is provided)
 
@@ -62,7 +62,7 @@ Alternative environment config:
 * PORT
 * BASE_PATH (to be able to serve the app behind a reverse proxy and get correct urls to assets)
 
-        $ PORT=7777 BASE_PATH='/cucumber' node app
+        $ PORT=7777 BASE_PATH='/cucumber' npm start
         => Will be serving app on http://HOST:PORT/cucumber
 
 When feature files are changed on disk, the syntaxhighlighted webpages will too...no configuration/build step...just refresh the browser.
