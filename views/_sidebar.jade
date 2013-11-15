@@ -2,6 +2,6 @@ aside#feature-list
   strong Features - #{product.name}
   nav
     ol
-      each feature, i in features
+      each feature in features
         li
           a(href='#{basePath}/#{product.id}/feature/#{feature.id}') #{feature.name}
