@@ -1,3 +1,5 @@
 node_modules
 products.json
 npm-debug.log
+
+.DS_Store
