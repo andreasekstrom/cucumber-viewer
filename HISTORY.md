@@ -1,3 +1,7 @@
+## v0.0.3
+
+* Bugfix: Application did not start because it used a deprectated doctype in layout.jade
+
 ## v0.0.2
 
 * Depend on coffeescript syntax change for coffee-script 1.6.x
